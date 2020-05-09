@@ -1,0 +1,1 @@
+scalac -classpath /Users/chris/Downloads/example/target/scala-2.12/classes -language:implicitConversions -deprecation -bootclasspath /Users/chris/.sbt/boot/scala-2.12.7/lib/scala-library.jar /Users/chris/Downloads/example/src/main/scala/example/Lists.scala /Users/chris/Downloads/example/src/main/scala/example/Main.scala
