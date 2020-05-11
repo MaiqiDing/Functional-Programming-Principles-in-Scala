@@ -47,7 +47,8 @@ class FunSetSuite {
    * Once you finish your implementation of "singletonSet", remvoe the
    * @Ignore annotation.
    */
-  @Ignore("not ready yet") @Test def `singleton set one contains one`: Unit = {
+//  @Ignore("not ready yet")
+  @Test def `singleton set one contains one`: Unit = {
 
     /**
      * We create a new instance of the "TestSets" trait, this gives us access
@@ -59,6 +60,8 @@ class FunSetSuite {
        * the test fails. This helps identifying which assertion failed.
        */
       assert(contains(s1, 1), "Singleton")
+      assert(!contains(s2, 1), "Singleton")
+
     }
   }
 
@@ -68,6 +71,22 @@ class FunSetSuite {
       assert(contains(s, 1), "Union 1")
       assert(contains(s, 2), "Union 2")
       assert(!contains(s, 3), "Union 3")
+    }
+  }
+
+  @Test def `intersect contains all elements both in two sets`: Unit = {
+    new TestSets {
+      val s = intersect(s1,s2)
+      assert(!contains(s,1), "intersect 1")
+      assert(!contains(s,2), "intersect 2")
+    }
+  }
+
+  @Test def `diff contains all elements in first set but not second`: Unit = {
+    new TestSets {
+      val s = diff(s1,s2)
+      assert(contains(s,1), "diff 1")
+      assert(!contains(s,2), "diff 2")
     }
   }
 
