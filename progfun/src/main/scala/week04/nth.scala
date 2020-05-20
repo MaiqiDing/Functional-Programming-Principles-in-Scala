@@ -8,7 +8,7 @@ object nth {
   }
 
   def main(args: Array[String]): Unit = {
-    val list = new Cons(1, new Cons(2, new Cons(3, new Nil)))
+    val list = new Cons(1, new Cons(2, new Cons(3, Nil)))
 
     println(nth(2, list))
     println(nth(4, list))
