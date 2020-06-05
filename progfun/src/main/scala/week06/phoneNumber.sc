@@ -9,9 +9,12 @@ import scala.io.Source
   * example: The phone number "7225247386" should have the mnemonic "Scala is fun"
   * as one element of the set of solution phrase
   */
-val in = Source.fromURL("https://www.mit.edu/~ecprice/wordlist.10000")
+val in = Source.fromURL("https://www.epfl.ch/labs/lamp/wp-content/uploads/2019/01/linuxwords.txt")
+//val in = Source.fromURL("https://www.mit.edu/~ecprice/wordlist.10000")
+//val in = Source.fromURL("https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt")
 
-val words = in.getLines.toList filter (word => word forall (chr => chr.isLetter)) filter(word => word.length > 1)
+
+val words = in.getLines.toList filter (word => word forall (chr => chr.isLetter)) //filter(word => word.length > 1)
 
 val mnem = Map('2' -> "ABC", '3' -> "DEF", '4' -> "GHI", '5' -> "JKL",
   '6' -> "MNO", '7' -> "PQRS", '8' -> "TUV", '9' -> "WXYZ")
@@ -52,4 +55,16 @@ def translate(number: String): Set[String] =
   encode(number) map (_ mkString " ")
 
 println(translate("2665489"))
-println(translate("73624772623")) //renaissance
+println(translate("4128976527"))
+println(translate("7225247386"))
+// Set(sack air fun,
+// pack ah re to,
+// pack bird to,
+// Scala ire to,
+// Scala is fun,
+// rack ah re to,
+// pack air fun,
+// sack bird to,
+// rack bird to,
+// sack ah re to,
+// rack air fun)
