@@ -53,7 +53,7 @@ def encode(number: String): Set[List[String]] =
 
 def translate(number: String): Set[String] =
   encode(number) map (_ mkString " ")
-
+println("trans="+translate("7363398687"))
 println(translate("2665489"))
 println(translate("4128976527"))
 println(translate("7225247386"))

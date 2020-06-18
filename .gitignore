@@ -1,0 +1,17 @@
+.DS_Store
+
+*.class
+*.log
+
+# sbt specific
+.cache
+.history
+.lib/
+target/
+project/project/
+project/target/
+
+# Scala-IDE specific
+*/.idea/workspace.xml
+*/.idea/misc.xml
+*/.idea/.name
